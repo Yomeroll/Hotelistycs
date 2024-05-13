@@ -2,6 +2,8 @@ package IGU;
 
 import conexion.MetodosSQL;
 import java.awt.Color;
+import javax.swing.*;
+import logica.*;
 
 /**
  *
@@ -11,12 +13,35 @@ public class inicio1 extends javax.swing.JFrame {
     
     public inicio1(){
         initComponents();
+        
     }
     
     MetodosSQL sql = new MetodosSQL();
-    
+    cuenta cuenta=new cuenta();
+    cuarto room=new cuarto();
+    cama bed=new cama();
+    huesped hd=new huesped();
+    paquete paq=new paquete();
+    reservacion reserv=new reservacion();
+    servicio serv=new servicio();
     
     int xMouse, yMouse;
+    
+    public void avisoPrimerInicio(){
+        cuenta=sql.buscarCuenta("administrador", "admin", "admin", "admin", "admin", "admin");
+        if( cuenta.getTipo_cuenta()!= null 
+            && cuenta.getContra()!= null 
+            && cuenta.getUser_name()!= null 
+            && cuenta.getNombre()!= null
+            && cuenta.getApellido_pat()!= null
+            && cuenta.getApellido_mat()!= null)
+        {
+        JOptionPane.showMessageDialog(this, "Si es la primera vez que inicia el programa entre con los siguietes datos:"
+            + "\nUsuario: admin"
+            + "\nContraseña: admin");
+        cuenta=null; 
+        }
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -122,6 +147,9 @@ public class inicio1 extends javax.swing.JFrame {
         textfieldUsuario1.setText("Ingrese su nombre de usuario");
         textfieldUsuario1.setBorder(null);
         textfieldUsuario1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textfieldUsuario1MouseClicked(evt);
+            }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 textfieldUsuario1MousePressed(evt);
             }
@@ -328,10 +356,44 @@ public class inicio1 extends javax.swing.JFrame {
     }//GEN-LAST:event_passFielMousePressed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-
-        javax.swing.JOptionPane.showMessageDialog(this, "Registro Exitoso\nUsuario: " + textfieldUsuario1.getText() + "\nContraseña: "+ String.valueOf(passFiel.getPassword()));
+        validar();
     }//GEN-LAST:event_jLabel1MouseClicked
-
+    public void validar(){
+        String user_name=textfieldUsuario1.getText();
+        String contra=String.valueOf(passFiel.getPassword());
+        
+        if(textfieldUsuario1.getText().isEmpty() || String.valueOf(passFiel.getPassword()).isEmpty() || String.valueOf(passFiel.getPassword()).equals("********") || textfieldUsuario1.getText().equals("Ingrese su nombre de usuario")){
+            JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos");
+            textfieldUsuario1.requestFocus();
+        }else{
+            cuenta=sql.ValidarCuenta(contra, user_name);
+            System.out.println(cuenta.getTipo_cuenta());
+            System.out.println(cuenta.getUser_name());
+            System.out.println(cuenta.getContra());
+        }
+        
+        if(cuenta.getUser_name() != null && cuenta.getContra() != null){
+            BienvenidaAdmin BAdmin = new BienvenidaAdmin();
+            BAdmin.setVisible(true);
+            dispose();
+        }else{
+            if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta()=="administrador"){
+                Administrador admin = new Administrador();
+                admin.setVisible(true);
+                dispose();
+            }else{
+                if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta()=="recepcionista"){
+                    Recepcionista recep= new Recepcionista();
+                    recep.setVisible(true);
+                    dispose();
+                }else{
+                    JOptionPane.showMessageDialog(this, "Los datos ingresados son incorrectos");
+                    textfieldUsuario1.requestFocus();
+                }
+            }
+        } 
+        cuenta=null;
+    }
     private void fondoInicioderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fondoInicioderMouseDragged
 
     }//GEN-LAST:event_fondoInicioderMouseDragged
@@ -339,6 +401,10 @@ public class inicio1 extends javax.swing.JFrame {
     private void fondoInicioderMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fondoInicioderMousePressed
 
     }//GEN-LAST:event_fondoInicioderMousePressed
+
+    private void textfieldUsuario1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textfieldUsuario1MouseClicked
+        avisoPrimerInicio();
+    }//GEN-LAST:event_textfieldUsuario1MouseClicked
 
     /**
      * @param args the command line arguments

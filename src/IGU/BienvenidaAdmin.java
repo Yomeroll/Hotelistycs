@@ -17,6 +17,7 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
     /** Creates new form BienvenidaAdmin */
     public BienvenidaAdmin() {
         initComponents();
+        
     }
     
     MetodosSQL sql = new MetodosSQL();
