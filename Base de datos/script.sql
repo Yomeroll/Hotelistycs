@@ -3,8 +3,8 @@ CREATE SCHEMA `hotelistycs` DEFAULT CHARACTER SET latin1 COLLATE latin1_bin ;
 USE  hotelistycs;
 
 CREATE TABLE `hotelistycs`.`cuenta` (
-  `id_cuenta` INT NOT NULL AUTO_INCREMENT,
-  `tipo_cuenta` ENUM('administrador', 'recepcion') NOT NULL,
+  `id_cucuentaenta` INT NOT NULL AUTO_INCREMENT,
+  `tipo_cuenta` ENUM('administrador', 'recepcionista') NOT NULL,
   `contra` CHAR(8) NOT NULL,
   `user_name` VARCHAR(15) NOT NULL,
   `nombre` VARCHAR(50) NOT NULL,
@@ -153,4 +153,10 @@ CREATE TABLE `hotelistycs`.`reservacion_paquete` (
     FOREIGN KEY (`id_reservacion_paquete`)
     REFERENCES `hotelistycs`.`reservacion` (`id_reservacion`)
     ON DELETE CASCADE
-    ON UPDATE CASCADE);    
+    ON UPDATE CASCADE);  
+    
+INSERT INTO cuenta (tipo_cuenta, contra, user_name, nombre, apellido_pat, apellido_mat) VALUES ("administrador", "admin", "admin", "admin", "admin", "admin");
+INSERT INTO cuenta (tipo_cuenta, contra, user_name, nombre, apellido_pat, apellido_mat) VALUES ("administrador", "Yomeroll", "Yomeroll", "Yomeroll", "Yomeroll", "Yomeroll");
+INSERT INTO cuenta (tipo_cuenta, contra, user_name, nombre, apellido_pat, apellido_mat) VALUES ("recepcion", "Yomeroll", "Yomeroll23", "Yomeroll23", "Yomeroll23", "Yomeroll23");
+DELETE FROM cuenta WHERE id_cuenta=6;    
+SELECT * FROM cuenta WHERE user_name="admin";

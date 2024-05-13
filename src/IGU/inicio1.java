@@ -367,22 +367,16 @@ public class inicio1 extends javax.swing.JFrame {
             textfieldUsuario1.requestFocus();
         }else{
             cuenta=sql.ValidarCuenta(contra, user_name);
-            System.out.println(cuenta.getTipo_cuenta());
-            System.out.println(cuenta.getUser_name());
-            System.out.println(cuenta.getContra());
-        }
-        
-        if(cuenta.getUser_name() != null && cuenta.getContra() != null){
-            BienvenidaAdmin BAdmin = new BienvenidaAdmin();
-            BAdmin.setVisible(true);
-            dispose();
-        }else{
-            if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta()=="administrador"){
+            
+            if(cuenta.getUser_name().equals("admin") && cuenta.getContra().equals("admin")){
+                BienvenidaAdmin BAdmin = new BienvenidaAdmin();
+                BAdmin.setVisible(true);
+                dispose();
+            }else if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta().equals("administrador")){
                 Administrador admin = new Administrador();
                 admin.setVisible(true);
                 dispose();
-            }else{
-                if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta()=="recepcionista"){
+            }else if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta().equals("recepcion")){
                     Recepcionista recep= new Recepcionista();
                     recep.setVisible(true);
                     dispose();
@@ -390,10 +384,12 @@ public class inicio1 extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this, "Los datos ingresados son incorrectos");
                     textfieldUsuario1.requestFocus();
                 }
-            }
-        } 
-        cuenta=null;
+        }
+
     }
+        
+
+    
     private void fondoInicioderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fondoInicioderMouseDragged
 
     }//GEN-LAST:event_fondoInicioderMouseDragged
