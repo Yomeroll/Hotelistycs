@@ -10,59 +10,59 @@ package logica;
  */
 public class cuarto {
     
-    int idcuarto, numpiso, maxhuespedes, numcuarto, idtipo;
-    String estado;
+    int id_cuarto, num_piso, max_huespedes, num_cuarto, id_tipo_cuarto;
+    String estado;  
 
     public cuarto() {
     }
 
-    public cuarto(int idcuarto, int numpiso, int maxhuespedes, int numcuarto, int idtipo, String estado) {
-        this.idcuarto = idcuarto;
-        this.numpiso = numpiso;
-        this.maxhuespedes = maxhuespedes;
-        this.numcuarto = numcuarto;
-        this.idtipo = idtipo;
+    public cuarto(int id_cuarto, int num_piso, int max_huespedes, int num_cuarto, int id_tipo_cuarto, String estado) {
+        this.id_cuarto = id_cuarto;
+        this.num_piso = num_piso;
+        this.max_huespedes = max_huespedes;
+        this.num_cuarto = num_cuarto;
+        this.id_tipo_cuarto = id_tipo_cuarto;
         this.estado = estado;
     }
 
-    public int getIdcuarto() {
-        return idcuarto;
+    public int getId_cuarto() {
+        return id_cuarto;
     }
 
-    public void setIdcuarto(int idcuarto) {
-        this.idcuarto = idcuarto;
+    public void setId_cuarto(int id_cuarto) {
+        this.id_cuarto = id_cuarto;
     }
 
-    public int getNumpiso() {
-        return numpiso;
+    public int getNum_piso() {
+        return num_piso;
     }
 
-    public void setNumpiso(int numpiso) {
-        this.numpiso = numpiso;
+    public void setNum_piso(int num_piso) {
+        this.num_piso = num_piso;
     }
 
-    public int getMaxhuespedes() {
-        return maxhuespedes;
+    public int getMax_huespedes() {
+        return max_huespedes;
     }
 
-    public void setMaxhuespedes(int maxhuespedes) {
-        this.maxhuespedes = maxhuespedes;
+    public void setMax_huespedes(int max_huespedes) {
+        this.max_huespedes = max_huespedes;
     }
 
-    public int getNumcuarto() {
-        return numcuarto;
+    public int getNum_cuarto() {
+        return num_cuarto;
     }
 
-    public void setNumcuarto(int numcuarto) {
-        this.numcuarto = numcuarto;
+    public void setNum_cuarto(int num_cuarto) {
+        this.num_cuarto = num_cuarto;
     }
 
-    public int getIdtipo() {
-        return idtipo;
+    public int getId_tipo_cuarto() {
+        return id_tipo_cuarto;
     }
 
-    public void setIdtipo(int idtipo) {
-        this.idtipo = idtipo;
+    public void setId_tipo_cuarto(int id_tipo_cuarto) {
+        this.id_tipo_cuarto = id_tipo_cuarto;
     }
 
     public String getEstado() {
@@ -72,7 +72,6 @@ public class cuarto {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
     
     
 }

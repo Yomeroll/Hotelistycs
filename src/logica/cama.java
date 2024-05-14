@@ -10,32 +10,34 @@ package logica;
  */
 public class cama {
     
-    int idcama;
-    String tipocama;
+    int id_cama;
+    String tipo_cama;
 
     public cama() {
     }
 
-    public cama(int idcama, String tipocama) {
-        this.idcama = idcama;
-        this.tipocama = tipocama;
+    public cama(int id_cama, String tipo_cama) {
+        this.id_cama = id_cama;
+        this.tipo_cama = tipo_cama;
     }
 
-    public int getIdcama() {
-        return idcama;
+    public int getId_cama() {
+        return id_cama;
     }
 
-    public void setIdcama(int idcama) {
-        this.idcama = idcama;
+    public void setId_cama(int id_cama) {
+        this.id_cama = id_cama;
     }
 
-    public String getTipocama() {
-        return tipocama;
+    public String getTipo_cama() {
+        return tipo_cama;
     }
 
-    public void setTipocama(String tipocama) {
-        this.tipocama = tipocama;
+    public void setTipo_cama(String tipo_cama) {
+        this.tipo_cama = tipo_cama;
     }
+
+
     
     
     

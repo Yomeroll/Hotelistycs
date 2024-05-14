@@ -6,13 +6,15 @@ import javax.swing.*;
 import logica.*;
 
 /** 
- *
+ * 
  * @author scben
  */
 public class inicio1 extends javax.swing.JFrame {
     
     public inicio1(){
         initComponents();
+        
+        sql.buscarCuenta("administrador", "", "", "", "", "");
         
     }
     
@@ -52,8 +54,11 @@ public class inicio1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos");
             textfieldUsuario1.requestFocus();
         }else{
-            cuenta=sql.ValidarCuenta(contra, user_name);           
-            if(cuenta.getUser_name().equals("admin") && cuenta.getContra().equals("admin")){
+            cuenta=sql.ValidarCuenta(contra, user_name);  
+            if(cuenta.getUser_name()==null || cuenta.getContra()==null){
+                JOptionPane.showMessageDialog(this, "Los datos ingresados son incorrectos");
+                textfieldUsuario1.requestFocus();
+            }else if(cuenta.getUser_name().equals("admin") && cuenta.getContra().equals("admin")){
                 BienvenidaAdmin BAdmin = new BienvenidaAdmin();
                 BAdmin.setVisible(true);
                 dispose();
@@ -61,13 +66,10 @@ public class inicio1 extends javax.swing.JFrame {
                 Administrador admin = new Administrador();
                 admin.setVisible(true);
                 dispose();
-            }else if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta().equals("recepcion")){
+            }else if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta().equals("recepcionista")){
                     Recepcionista recep= new Recepcionista();
                     recep.setVisible(true);
                     dispose();
-                }else{
-                    JOptionPane.showMessageDialog(this, "Los datos ingresados son incorrectos");
-                    textfieldUsuario1.requestFocus();
                 }
         }
 
@@ -90,7 +92,7 @@ public class inicio1 extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         passFiel = new javax.swing.JPasswordField();
         btnIniciar = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        labelIniciar = new javax.swing.JLabel();
         imNombreEmpresa = new javax.swing.JLabel();
         logoApp = new javax.swing.JLabel();
         fondoInicioder = new javax.swing.JLabel();
@@ -164,7 +166,7 @@ public class inicio1 extends javax.swing.JFrame {
         fondoInicio1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         panelInicio1.setBackground(new java.awt.Color(255, 255, 255));
-        panelInicio1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        panelInicio1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         iniciarSesionLbl.setFont(new java.awt.Font("Dosis ExtraBold", 0, 36)); // NOI18N
         iniciarSesionLbl.setText("INICIAR DE SESIÓN");
@@ -214,21 +216,21 @@ public class inicio1 extends javax.swing.JFrame {
 
         btnIniciar.setBackground(new java.awt.Color(254, 133, 53));
 
-        jLabel1.setFont(new java.awt.Font("Dosis", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("INICIAR");
-        jLabel1.setToolTipText("");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelIniciar.setFont(new java.awt.Font("Dosis", 1, 18)); // NOI18N
+        labelIniciar.setForeground(new java.awt.Color(255, 255, 255));
+        labelIniciar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelIniciar.setText("INICIAR");
+        labelIniciar.setToolTipText("");
+        labelIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelIniciar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                labelIniciarMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel1MouseEntered(evt);
+                labelIniciarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel1MouseExited(evt);
+                labelIniciarMouseExited(evt);
             }
         });
 
@@ -236,14 +238,14 @@ public class inicio1 extends javax.swing.JFrame {
         btnIniciar.setLayout(btnIniciarLayout);
         btnIniciarLayout.setHorizontalGroup(
             btnIniciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addComponent(labelIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
         btnIniciarLayout.setVerticalGroup(
             btnIniciarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(labelIniciar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jLabel1.getAccessibleContext().setAccessibleName("botooonInicialLbl");
+        labelIniciar.getAccessibleContext().setAccessibleName("botooonInicialLbl");
 
         javax.swing.GroupLayout panelInicio1Layout = new javax.swing.GroupLayout(panelInicio1);
         panelInicio1.setLayout(panelInicio1Layout);
@@ -318,6 +320,7 @@ public class inicio1 extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void textfieldUsuario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textfieldUsuario1ActionPerformed
@@ -352,13 +355,13 @@ public class inicio1 extends javax.swing.JFrame {
         btnCerrar.setBackground(new Color(254,133,53));
     }//GEN-LAST:event_cerrarlbMouseExited
 
-    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+    private void labelIniciarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelIniciarMouseEntered
         btnIniciar.setBackground(new Color(254,163,51));
-    }//GEN-LAST:event_jLabel1MouseEntered
+    }//GEN-LAST:event_labelIniciarMouseEntered
 
-    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+    private void labelIniciarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelIniciarMouseExited
         btnIniciar.setBackground(new Color(254,133,53));
-    }//GEN-LAST:event_jLabel1MouseExited
+    }//GEN-LAST:event_labelIniciarMouseExited
 
     private void textfieldUsuario1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textfieldUsuario1MousePressed
         
@@ -385,9 +388,9 @@ public class inicio1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_passFielMousePressed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void labelIniciarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelIniciarMouseClicked
         validar();
-    }//GEN-LAST:event_jLabel1MouseClicked
+    }//GEN-LAST:event_labelIniciarMouseClicked
  
     private void fondoInicioderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fondoInicioderMouseDragged
 
@@ -446,9 +449,9 @@ public class inicio1 extends javax.swing.JFrame {
     private javax.swing.JPanel header;
     private javax.swing.JLabel imNombreEmpresa;
     private javax.swing.JLabel iniciarSesionLbl;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel labelIniciar;
     private javax.swing.JLabel logoApp;
     private javax.swing.JPanel panelInicio1;
     private javax.swing.JPasswordField passFiel;

@@ -119,12 +119,12 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
         btnCerrar = new javax.swing.JPanel();
         cerrarlb = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        hola = new javax.swing.JLabel();
+        textoNU = new javax.swing.JLabel();
+        textoN = new javax.swing.JLabel();
+        textoPat = new javax.swing.JLabel();
+        textoMat = new javax.swing.JLabel();
+        textoCN = new javax.swing.JLabel();
         txt_Usuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         txt_nombre_U = new javax.swing.JTextField();
@@ -135,11 +135,11 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         txt_Password = new javax.swing.JPasswordField();
         jSeparator5 = new javax.swing.JSeparator();
-        jLabel8 = new javax.swing.JLabel();
+        textoCC = new javax.swing.JLabel();
         txt_PasswordConfirm = new javax.swing.JPasswordField();
         jSeparator6 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        btnConfirmar = new javax.swing.JPanel();
+        labelConfirmar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -210,25 +210,25 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setFont(new java.awt.Font("Dosis Medium", 0, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Hola, administrador, bienvenido a Hotelistycs, edita tú perfíl para los siguientes inicios de sesión:");
-        jLabel1.setToolTipText("");
+        hola.setFont(new java.awt.Font("Dosis Medium", 0, 24)); // NOI18N
+        hola.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hola.setText("Hola, administrador, bienvenido a Hotelistycs, edita tú perfíl para los siguientes inicios de sesión:");
+        hola.setToolTipText("");
 
-        jLabel2.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
-        jLabel2.setText("Nombre de Usuario:");
+        textoNU.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
+        textoNU.setText("Nombre de Usuario:");
 
-        jLabel3.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
-        jLabel3.setText("Nombre:");
+        textoN.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
+        textoN.setText("Nombre:");
 
-        jLabel4.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
-        jLabel4.setText("Apellido Paterno:");
+        textoPat.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
+        textoPat.setText("Apellido Paterno:");
 
-        jLabel5.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
-        jLabel5.setText("Apellido Materno:");
+        textoMat.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
+        textoMat.setText("Apellido Materno:");
 
-        jLabel6.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
-        jLabel6.setText("Contraseña nueva (8 caractéres):");
+        textoCN.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
+        textoCN.setText("Contraseña nueva (8 caractéres):");
 
         txt_Usuario.setFont(new java.awt.Font("Heebo Light", 0, 14)); // NOI18N
         txt_Usuario.setForeground(new java.awt.Color(204, 204, 204));
@@ -300,8 +300,8 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
 
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel8.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
-        jLabel8.setText("Confirma tú contraseña");
+        textoCC.setFont(new java.awt.Font("Dosis Medium", 0, 18)); // NOI18N
+        textoCC.setText("Confirma tú contraseña");
 
         txt_PasswordConfirm.setFont(new java.awt.Font("Dosis ExtraBold", 0, 18)); // NOI18N
         txt_PasswordConfirm.setForeground(new java.awt.Color(204, 204, 204));
@@ -315,28 +315,34 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
 
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
 
-        jPanel2.setBackground(new java.awt.Color(254, 133, 53));
+        btnConfirmar.setBackground(new java.awt.Color(254, 133, 53));
 
-        jLabel7.setFont(new java.awt.Font("Dosis Medium", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("CONFIRMAR");
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelConfirmar.setFont(new java.awt.Font("Dosis Medium", 1, 18)); // NOI18N
+        labelConfirmar.setForeground(new java.awt.Color(255, 255, 255));
+        labelConfirmar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelConfirmar.setText("CONFIRMAR");
+        labelConfirmar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        labelConfirmar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
+                labelConfirmarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                labelConfirmarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                labelConfirmarMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+        javax.swing.GroupLayout btnConfirmarLayout = new javax.swing.GroupLayout(btnConfirmar);
+        btnConfirmar.setLayout(btnConfirmarLayout);
+        btnConfirmarLayout.setHorizontalGroup(
+            btnConfirmarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        btnConfirmarLayout.setVerticalGroup(
+            btnConfirmarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelConfirmar, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -345,15 +351,15 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(hola, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel2)
+                                    .addComponent(textoN)
+                                    .addComponent(textoPat)
+                                    .addComponent(textoNU)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txt_Usuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -366,9 +372,9 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
                                     .addComponent(jSeparator6)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
+                                            .addComponent(textoCN)
                                             .addComponent(txt_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel8)
+                                            .addComponent(textoCC)
                                             .addComponent(txt_PasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -376,14 +382,14 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(txt_apellido_PU, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel5))
+                                    .addComponent(textoMat))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txt_apellido_MU, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 182, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -395,11 +401,11 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(hola)
                                 .addGap(63, 63, 63)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel6))
+                                    .addComponent(textoNU)
+                                    .addComponent(textoCN))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txt_Usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txt_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -408,7 +414,7 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel3)
+                        .addComponent(textoN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_nombre_U, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -416,7 +422,7 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
+                                .addComponent(textoCC)
                                 .addGap(42, 42, 42))
                             .addComponent(txt_PasswordConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -424,18 +430,18 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(textoPat)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(txt_apellido_PU, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
-                        .addComponent(jLabel5)
+                        .addComponent(textoMat)
                         .addGap(18, 18, 18)
                         .addComponent(txt_apellido_MU, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
@@ -453,6 +459,7 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cerrarlbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarlbMouseClicked
@@ -479,18 +486,19 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_headerMousePressed
 
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+    private void labelConfirmarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelConfirmarMouseClicked
     /* Editar Cuenta*/
     int contra = validarCambio();
     if(contra==1){
         editar();
         ConfigurarHotel configH=new ConfigurarHotel();
         configH.setVisible(true);
+        dispose();
     }else{
-        System.out.println("No sé realizo ningun cambio en la base de datos");
+        //System.out.println("No sé realizo ningun cambio en la base de datos");
     }
     
-    }//GEN-LAST:event_jLabel7MouseClicked
+    }//GEN-LAST:event_labelConfirmarMouseClicked
 
     private void txt_UsuarioMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txt_UsuarioMousePressed
         
@@ -580,6 +588,14 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
         resetContra();
     }//GEN-LAST:event_txt_PasswordConfirmMousePressed
 
+    private void labelConfirmarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelConfirmarMouseEntered
+        btnConfirmar.setBackground(new Color(254,163,51));       
+    }//GEN-LAST:event_labelConfirmarMouseEntered
+
+    private void labelConfirmarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelConfirmarMouseExited
+        btnConfirmar.setBackground(new Color(254,133,53));
+    }//GEN-LAST:event_labelConfirmarMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -618,24 +634,24 @@ public class BienvenidaAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BienvenidaAdmin;
     private javax.swing.JPanel btnCerrar;
+    private javax.swing.JPanel btnConfirmar;
     private javax.swing.JLabel cerrarlb;
     private javax.swing.JPanel header;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel hola;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JLabel labelConfirmar;
+    private javax.swing.JLabel textoCC;
+    private javax.swing.JLabel textoCN;
+    private javax.swing.JLabel textoMat;
+    private javax.swing.JLabel textoN;
+    private javax.swing.JLabel textoNU;
+    private javax.swing.JLabel textoPat;
     private javax.swing.JPasswordField txt_Password;
     private javax.swing.JPasswordField txt_PasswordConfirm;
     private javax.swing.JTextField txt_Usuario;

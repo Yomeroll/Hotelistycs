@@ -12,7 +12,7 @@ public class huesped {
     
     int id_huesped;
     LocalDate fecha_nac ;
-    String hnombre, hapellidopat, hapellidomat;
+    String hnombre, hapellido_pat, hapellido_mat;
 
     public huesped() {
     }
@@ -21,8 +21,8 @@ public class huesped {
         this.id_huesped = id_huesped;
         this.fecha_nac = fecha_nac;
         this.hnombre = hnombre;
-        this.hapellidopat = hapellidopat;
-        this.hapellidomat = hapellidomat;
+        this.hapellido_pat = hapellidopat;
+        this.hapellido_mat = hapellidomat;
     }
 
     public int getId_huesped() {
@@ -50,19 +50,19 @@ public class huesped {
     }
 
     public String getHapellidopat() {
-        return hapellidopat;
+        return hapellido_pat;
     }
 
     public void setHapellidopat(String hapellidopat) {
-        this.hapellidopat = hapellidopat;
+        this.hapellido_pat = hapellidopat;
     }
 
     public String getHapellidomat() {
-        return hapellidomat;
+        return hapellido_mat;
     }
 
     public void setHapellidomat(String hapellidomat) {
-        this.hapellidomat = hapellidomat;
+        this.hapellido_mat = hapellidomat;
     }
     
     

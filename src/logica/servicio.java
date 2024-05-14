@@ -10,43 +10,42 @@ package logica;
  */
 public class servicio {
     
-    int idservicio;
-    String tiposervicio;
-    float precioservicio;
+    int id_servicio;
+    String tipo_servicio;
+    float precio_servicio;
 
     public servicio() {
     }
 
-    public servicio(int idservicio, String tiposervicio, float precioservicio) {
-        this.idservicio = idservicio;
-        this.tiposervicio = tiposervicio;
-        this.precioservicio = precioservicio;
+    public servicio(int id_servicio, String tipo_servicio, float precio_servicio) {
+        this.id_servicio = id_servicio;
+        this.tipo_servicio = tipo_servicio;
+        this.precio_servicio = precio_servicio;
     }
 
-    public int getIdservicio() {
-        return idservicio;
+    public int getId_servicio() {
+        return id_servicio;
     }
 
-    public void setIdservicio(int idservicio) {
-        this.idservicio = idservicio;
+    public void setId_servicio(int id_servicio) {
+        this.id_servicio = id_servicio;
     }
 
-    public String getTiposervicio() {
-        return tiposervicio;
+    public String getTipo_servicio() {
+        return tipo_servicio;
     }
 
-    public void setTiposervicio(String tiposervicio) {
-        this.tiposervicio = tiposervicio;
+    public void setTipo_servicio(String tipo_servicio) {
+        this.tipo_servicio = tipo_servicio;
     }
 
-    public float getPrecioservicio() {
-        return precioservicio;
+    public float getPrecio_servicio() {
+        return precio_servicio;
     }
 
-    public void setPrecioservicio(float precioservicio) {
-        this.precioservicio = precioservicio;
+    public void setPrecio_servicio(float precio_servicio) {
+        this.precio_servicio = precio_servicio;
     }
-    
     
     
 }

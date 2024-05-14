@@ -5,6 +5,7 @@
 package IGU;
 
 import conexion.MetodosSQL;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 
@@ -13,15 +14,15 @@ import javax.swing.JPanel;
  * @author scben
  */
 public class ConfigurarHotel extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ConfigurarHotel
-     */
+    
     public ConfigurarHotel() {
         initComponents();
+        NombreDireccion nDir=new NombreDireccion();
+        mV.cambiarPanelConfig(nDir, contenedor);
     }
-    
-    MetodosSQL sql = new MetodosSQL();
+        
+    //MetodosSQL sql = new MetodosSQL();
+    metodosVentanas mV = new metodosVentanas();
     
     public void ShowPanelB(JPanel p, int x, int y){
     
@@ -37,25 +38,26 @@ public class ConfigurarHotel extends javax.swing.JFrame {
         header = new javax.swing.JPanel();
         btnCerrar = new javax.swing.JPanel();
         cerrarlb = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        menu = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        panNombreDireccion = new javax.swing.JPanel();
+        textNombreDireccion = new javax.swing.JLabel();
+        panCamas = new javax.swing.JPanel();
+        textCamas = new javax.swing.JLabel();
+        panServicios = new javax.swing.JPanel();
+        textServicios = new javax.swing.JLabel();
+        panCuentas = new javax.swing.JPanel();
+        textCuentas = new javax.swing.JLabel();
+        panPaq = new javax.swing.JPanel();
+        textPaquetes = new javax.swing.JLabel();
+        panHabitaciones = new javax.swing.JPanel();
+        textHabitaciones = new javax.swing.JLabel();
         contenedor = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         header.setBackground(new java.awt.Color(254, 133, 53));
@@ -119,144 +121,136 @@ public class ConfigurarHotel extends javax.swing.JFrame {
 
         jPanel1.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 30));
 
-        jPanel3.setBackground(new java.awt.Color(254, 244, 192));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        menu.setBackground(new java.awt.Color(253, 177, 11));
+        menu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoApp.png"))); // NOI18N
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 300, -1));
+        menu.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 300, -1));
 
-        jPanel4.setBackground(new java.awt.Color(254, 244, 192));
+        panNombreDireccion.setBackground(new java.awt.Color(255, 255, 255));
+        panNombreDireccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel5.setFont(new java.awt.Font("Heebo Medium", 0, 18)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Nombre & Direccion");
+        textNombreDireccion.setFont(new java.awt.Font("Heebo Medium", 0, 20)); // NOI18N
+        textNombreDireccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textNombreDireccion.setText("Nombre & Direccion");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        javax.swing.GroupLayout panNombreDireccionLayout = new javax.swing.GroupLayout(panNombreDireccion);
+        panNombreDireccion.setLayout(panNombreDireccionLayout);
+        panNombreDireccionLayout.setHorizontalGroup(
+            panNombreDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textNombreDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-        );
-
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 223, -1, -1));
-
-        jPanel5.setBackground(new java.awt.Color(254, 244, 192));
-        jPanel5.setPreferredSize(new java.awt.Dimension(300, 60));
-
-        jLabel6.setFont(new java.awt.Font("Heebo Medium", 0, 18)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Habitaciones");
-        jLabel6.setPreferredSize(new java.awt.Dimension(299, 59));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        panNombreDireccionLayout.setVerticalGroup(
+            panNombreDireccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textNombreDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 300, 60));
+        menu.add(panNombreDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, -1));
 
-        jPanel6.setBackground(new java.awt.Color(254, 244, 192));
+        panCamas.setBackground(new java.awt.Color(253, 177, 11));
 
-        jLabel7.setFont(new java.awt.Font("Heebo Medium", 0, 18)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Camas");
+        textCamas.setFont(new java.awt.Font("Heebo SemiBold", 0, 20)); // NOI18N
+        textCamas.setForeground(new java.awt.Color(255, 255, 255));
+        textCamas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCamas.setText("Camas");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout panCamasLayout = new javax.swing.GroupLayout(panCamas);
+        panCamas.setLayout(panCamasLayout);
+        panCamasLayout.setHorizontalGroup(
+            panCamasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textCamas, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-        );
-
-        jPanel3.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 300, 60));
-
-        jPanel7.setBackground(new java.awt.Color(254, 244, 192));
-
-        jLabel8.setFont(new java.awt.Font("Heebo Medium", 0, 18)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Servicios");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        panCamasLayout.setVerticalGroup(
+            panCamasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textCamas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 300, 60));
+        menu.add(panCamas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 300, 60));
 
-        jPanel8.setBackground(new java.awt.Color(254, 244, 192));
+        panServicios.setBackground(new java.awt.Color(253, 177, 11));
 
-        jLabel9.setFont(new java.awt.Font("Heebo Medium", 0, 18)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Cuentas");
+        textServicios.setFont(new java.awt.Font("Heebo SemiBold", 0, 20)); // NOI18N
+        textServicios.setForeground(new java.awt.Color(255, 255, 255));
+        textServicios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textServicios.setText("Servicios");
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout panServiciosLayout = new javax.swing.GroupLayout(panServicios);
+        panServicios.setLayout(panServiciosLayout);
+        panServiciosLayout.setHorizontalGroup(
+            panServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textServicios, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        panServiciosLayout.setVerticalGroup(
+            panServiciosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textServicios, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 300, 60));
+        menu.add(panServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 300, 60));
 
-        jPanel9.setBackground(new java.awt.Color(254, 244, 192));
+        panCuentas.setBackground(new java.awt.Color(253, 177, 11));
 
-        jLabel11.setFont(new java.awt.Font("Heebo Medium", 0, 18)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Paquetes");
+        textCuentas.setFont(new java.awt.Font("Heebo SemiBold", 0, 20)); // NOI18N
+        textCuentas.setForeground(new java.awt.Color(255, 255, 255));
+        textCuentas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textCuentas.setText("Cuentas");
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout panCuentasLayout = new javax.swing.GroupLayout(panCuentas);
+        panCuentas.setLayout(panCuentasLayout);
+        panCuentasLayout.setHorizontalGroup(
+            panCuentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textCuentas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        panCuentasLayout.setVerticalGroup(
+            panCuentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textCuentas, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 300, 60));
+        menu.add(panCuentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 300, 60));
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 300, 670));
+        panPaq.setBackground(new java.awt.Color(253, 177, 11));
+
+        textPaquetes.setFont(new java.awt.Font("Heebo SemiBold", 0, 20)); // NOI18N
+        textPaquetes.setForeground(new java.awt.Color(255, 255, 255));
+        textPaquetes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textPaquetes.setText("Paquetes");
+
+        javax.swing.GroupLayout panPaqLayout = new javax.swing.GroupLayout(panPaq);
+        panPaq.setLayout(panPaqLayout);
+        panPaqLayout.setHorizontalGroup(
+            panPaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textPaquetes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        );
+        panPaqLayout.setVerticalGroup(
+            panPaqLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textPaquetes, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        menu.add(panPaq, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 300, 60));
+
+        panHabitaciones.setBackground(new java.awt.Color(253, 177, 11));
+        panHabitaciones.setPreferredSize(new java.awt.Dimension(300, 60));
+
+        textHabitaciones.setFont(new java.awt.Font("Heebo SemiBold", 0, 20)); // NOI18N
+        textHabitaciones.setForeground(new java.awt.Color(255, 255, 255));
+        textHabitaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        textHabitaciones.setText("Habitaciones");
+        textHabitaciones.setPreferredSize(new java.awt.Dimension(299, 59));
+
+        javax.swing.GroupLayout panHabitacionesLayout = new javax.swing.GroupLayout(panHabitaciones);
+        panHabitaciones.setLayout(panHabitacionesLayout);
+        panHabitacionesLayout.setHorizontalGroup(
+            panHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textHabitaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        );
+        panHabitacionesLayout.setVerticalGroup(
+            panHabitacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textHabitaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
+        menu.add(panHabitaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, -1, -1));
+
+        jPanel1.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 300, 670));
 
         contenedor.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -352,20 +346,20 @@ public class ConfigurarHotel extends javax.swing.JFrame {
     private javax.swing.JLabel cerrarlb;
     private javax.swing.JPanel contenedor;
     private javax.swing.JPanel header;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel menu;
+    private javax.swing.JPanel panCamas;
+    private javax.swing.JPanel panCuentas;
+    private javax.swing.JPanel panHabitaciones;
+    private javax.swing.JPanel panNombreDireccion;
+    private javax.swing.JPanel panPaq;
+    private javax.swing.JPanel panServicios;
+    private javax.swing.JLabel textCamas;
+    private javax.swing.JLabel textCuentas;
+    private javax.swing.JLabel textHabitaciones;
+    private javax.swing.JLabel textNombreDireccion;
+    private javax.swing.JLabel textPaquetes;
+    private javax.swing.JLabel textServicios;
     // End of variables declaration//GEN-END:variables
 }

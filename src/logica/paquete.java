@@ -10,40 +10,40 @@ package logica;
  */
 public class paquete {
     
-    int idpaquete, numcuartos;
-    float preciopaquete;
+    int id_paquete, num_cuartos;
+    float precio_paquete;
 
     public paquete() {
     }
         
     public paquete(int idpaquete, int numcuartos, float preciopaquete) {
-        this.idpaquete = idpaquete;
-        this.numcuartos = numcuartos;
-        this.preciopaquete = preciopaquete;
+        this.id_paquete = idpaquete;
+        this.num_cuartos = numcuartos;
+        this.precio_paquete = preciopaquete;
     }
 
     public int getIdpaquete() {
-        return idpaquete;
+        return id_paquete;
     }
 
     public void setIdpaquete(int idpaquete) {
-        this.idpaquete = idpaquete;
+        this.id_paquete = idpaquete;
     }
 
     public int getNumcuartos() {
-        return numcuartos;
+        return num_cuartos;
     }
 
     public void setNumcuartos(int numcuartos) {
-        this.numcuartos = numcuartos;
+        this.num_cuartos = numcuartos;
     }
 
     public float getPreciopaquete() {
-        return preciopaquete;
+        return precio_paquete;
     }
 
     public void setPreciopaquete(float preciopaquete) {
-        this.preciopaquete = preciopaquete;
+        this.precio_paquete = preciopaquete;
     }
     
     
