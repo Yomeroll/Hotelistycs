@@ -76,20 +76,19 @@ public class MetodosSQL {
         }
     }
     
-    public void editarCuenta(String tipo_cuenta, String contra, String user_name, String nombre, String apellido_pat, String apellido_mat){
+    public void editarCuenta(String tipo_cuenta, String contra, String user_name, String nombre, String apellido_pat, String apellido_mat, String actual ){
         Connection con = null;
         
         try{
             con=mysql.conectar();
-            ps = con.prepareStatement("UPDATE cuenta SET tipo_cuenta=?, contra=?, user_name=?, nombre=?, apellido_pat=?, apellido_mat=? WHERE user_name=?)");
+            ps = con.prepareStatement("UPDATE cuenta SET tipo_cuenta=?, contra=?, user_name=?, nombre=?, apellido_pat=?, apellido_mat=? WHERE user_name=?");
             ps.setString(1,tipo_cuenta);
             ps.setString(2,contra);
             ps.setString(3,user_name);
             ps.setString(4,nombre);
             ps.setString(5,apellido_pat);
             ps.setString(6,apellido_mat);
-            ps.setString(7,user_name);
-            
+            ps.setString(7,actual);
             int res= ps.executeUpdate();
             
             if(res > 0 ){

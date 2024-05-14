@@ -5,7 +5,7 @@ import java.awt.Color;
 import javax.swing.*;
 import logica.*;
 
-/**
+/** 
  *
  * @author scben
  */
@@ -42,6 +42,36 @@ public class inicio1 extends javax.swing.JFrame {
         cuenta=null; 
         }
     }
+    
+        public void validar(){
+        
+        String user_name=textfieldUsuario1.getText();
+        String contra=String.valueOf(passFiel.getPassword());
+        
+        if(textfieldUsuario1.getText().isEmpty() || String.valueOf(passFiel.getPassword()).isEmpty() || String.valueOf(passFiel.getPassword()).equals("********") || textfieldUsuario1.getText().equals("Ingrese su nombre de usuario")){
+            JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos");
+            textfieldUsuario1.requestFocus();
+        }else{
+            cuenta=sql.ValidarCuenta(contra, user_name);           
+            if(cuenta.getUser_name().equals("admin") && cuenta.getContra().equals("admin")){
+                BienvenidaAdmin BAdmin = new BienvenidaAdmin();
+                BAdmin.setVisible(true);
+                dispose();
+            }else if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta().equals("administrador")){
+                Administrador admin = new Administrador();
+                admin.setVisible(true);
+                dispose();
+            }else if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta().equals("recepcion")){
+                    Recepcionista recep= new Recepcionista();
+                    recep.setVisible(true);
+                    dispose();
+                }else{
+                    JOptionPane.showMessageDialog(this, "Los datos ingresados son incorrectos");
+                    textfieldUsuario1.requestFocus();
+                }
+        }
+
+    } 
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -358,38 +388,7 @@ public class inicio1 extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         validar();
     }//GEN-LAST:event_jLabel1MouseClicked
-    public void validar(){
-        String user_name=textfieldUsuario1.getText();
-        String contra=String.valueOf(passFiel.getPassword());
-        
-        if(textfieldUsuario1.getText().isEmpty() || String.valueOf(passFiel.getPassword()).isEmpty() || String.valueOf(passFiel.getPassword()).equals("********") || textfieldUsuario1.getText().equals("Ingrese su nombre de usuario")){
-            JOptionPane.showMessageDialog(this, "Debe ingresar todos los datos");
-            textfieldUsuario1.requestFocus();
-        }else{
-            cuenta=sql.ValidarCuenta(contra, user_name);
-            
-            if(cuenta.getUser_name().equals("admin") && cuenta.getContra().equals("admin")){
-                BienvenidaAdmin BAdmin = new BienvenidaAdmin();
-                BAdmin.setVisible(true);
-                dispose();
-            }else if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta().equals("administrador")){
-                Administrador admin = new Administrador();
-                admin.setVisible(true);
-                dispose();
-            }else if(cuenta.getUser_name() != null && cuenta.getContra() != null && cuenta.getTipo_cuenta().equals("recepcion")){
-                    Recepcionista recep= new Recepcionista();
-                    recep.setVisible(true);
-                    dispose();
-                }else{
-                    JOptionPane.showMessageDialog(this, "Los datos ingresados son incorrectos");
-                    textfieldUsuario1.requestFocus();
-                }
-        }
-
-    }
-        
-
-    
+ 
     private void fondoInicioderMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fondoInicioderMouseDragged
 
     }//GEN-LAST:event_fondoInicioderMouseDragged

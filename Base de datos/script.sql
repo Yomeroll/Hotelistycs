@@ -154,9 +154,11 @@ CREATE TABLE `hotelistycs`.`reservacion_paquete` (
     REFERENCES `hotelistycs`.`reservacion` (`id_reservacion`)
     ON DELETE CASCADE
     ON UPDATE CASCADE);  
-    
+
+SET SQL_SAFE_UPDATES= 0;
+SET SQL_SAFE_UPDATES= 1;    
 INSERT INTO cuenta (tipo_cuenta, contra, user_name, nombre, apellido_pat, apellido_mat) VALUES ("administrador", "admin", "admin", "admin", "admin", "admin");
 INSERT INTO cuenta (tipo_cuenta, contra, user_name, nombre, apellido_pat, apellido_mat) VALUES ("administrador", "Yomeroll", "Yomeroll", "Yomeroll", "Yomeroll", "Yomeroll");
 INSERT INTO cuenta (tipo_cuenta, contra, user_name, nombre, apellido_pat, apellido_mat) VALUES ("recepcion", "Yomeroll", "Yomeroll23", "Yomeroll23", "Yomeroll23", "Yomeroll23");
-DELETE FROM cuenta WHERE id_cuenta=6;    
+DELETE FROM cuenta;    
 SELECT * FROM cuenta WHERE user_name="admin";
